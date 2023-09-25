@@ -1,12 +1,12 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');  // neccessary discord.js classes
-const { token } = require('./config.json');
+const { token } = require('./config.json'); /// Follow the README.md tutorial. You need to create that file to make the bot run properly.
 const client = new Client({ intents: [GatewayIntentBits.Guilds]});
 d
 client.cooldowns = new Collection();
 client.commands = new Collection();
-const foldersPath = path.join(__dirname, 'commands');
+const foldersPath = path.join(__dirname, 'commands'); /// Here is the name of commands' directory.
 const commandFolders = fs.readdirSync(foldersPath);
 
 for (const folder of commandFolders) {
@@ -32,7 +32,7 @@ client.once(Events.ClientReady, c => {
     client.user.setActivity("servers :3", { type: "WATCHING"});
 });
 
-client.on('guildMemberAdd', async (member) => {
+client.on('guildMemberAdd', async (member) => { //// Not implemented yet. I don't think it works.
     console.log(`User ${member.user.tag} has joined the server.`);
     try {
         await member.send('Welcome to the server!'); // Customize this message as needed
@@ -41,7 +41,7 @@ client.on('guildMemberAdd', async (member) => {
     }
 
     // Specify the welcome channel by its ID
-    const welcomeChannelId = '1154857814821449873'; // Replace with the actual channel ID
+    const welcomeChannelId = 'ENTER_CHANNEL_ID_HERE'; ///////////////////////////////////// Replace with the actual channel ID
     const guild = member.guild;
     const welcomeChannel = guild.channels.cache.get(welcomeChannelId);
     
@@ -74,7 +74,7 @@ client.on(Events.InteractionCreate, async interaction => {
 
 	const now = Date.now();
 	const timestamps = cooldowns.get(command.data.name);
-	const defaultCooldownDuration = 3;
+	const defaultCooldownDuration = 3;  /// Here you can change the default value of cooldown of executing commands.
 	const cooldownAmount = (command.cooldown ?? defaultCooldownDuration) * 1000;
 
 	if (timestamps.has(interaction.user.id)) {
