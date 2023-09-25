@@ -1,5 +1,7 @@
-const { REST, Routes } = require('discord.js');
-const { clientId, guildId, token } = require('./config.json');
+///////// TLDR; This script is dedicated to refresh newly added or edited existing commands. Example: You added new command but your bot is already
+///////// running. What to do? Just open the bot directory in Terminal/Cmd and type "node deploy-commands.js".
+const { REST, Routes } = require('discord.js'); // Required library
+const { clientId, guildId, token } = require('./config.json'); /// You need to create the config.json (i have not published it because of the public visibility of my BOT token.)
 const fs = require('node:fs');
 const path = require('node:path');
 
