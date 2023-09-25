@@ -1,10 +1,10 @@
 const { SlashCommandBuilder } = require('discord.js');
 
-module.exports = {
+module.exports = {  ////// Unnecessary command. You can remove it if you want. 
     cooldown: 2,
     data: new SlashCommandBuilder()
-        .setName('riptide')
-        .setDescription('Carefully wakes up admin.'),
+        .setName('kriptide')
+        .setDescription('Pings the bot creator'),
     async execute(interaction) {
         await interaction.reply('<@417786138401439769>');
     },
