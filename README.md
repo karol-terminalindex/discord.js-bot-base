@@ -82,7 +82,7 @@ Installation tutorial:
 ### Installation
 
 1. Clone git repo somewhere
-2. Go to the folder
+2. Go to the folder, open terminal/cmd in that place, enter ***npm install*** to install all the needed node modules.
 3. Rename confignew.json to config.json
 4. Enter the config.json
 5. Go to [Discord Developer Portal](https://discord.com/developers/applications)
